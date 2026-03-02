@@ -1,0 +1,84 @@
+/* index.css - V11 Vibrant Professional DESIGN SYSTEM */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    /* The "Vibrant Elite" Palette */
+    --bg-pure: #FFFFFF;
+    --primary: #2563EB;
+    /* Vibrant Royal Blue */
+    --secondary: #10B981;
+    /* Vibrant Emerald */
+    --accent: #F59E0B;
+    /* Vibrant Amber */
+    --text-main: #0F172A;
+    /* Rich Navy Slate */
+    --text-muted: #475569;
+    --bg-soft: #F1F5F9;
+    --border: #E2E8F0;
+
+    --shadow-luxe: 0 20px 50px -12px rgba(37, 99, 235, 0.15);
+    --transition-vibrant: 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    /* Bouncy high-end transition */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-pure);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    margin: 0;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+/* Vibrant Button Base */
+.btn-vibrant {
+    padding: 0.8rem 1.8rem;
+    border-radius: 99px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    transition: all 0.4s var(--transition-vibrant);
+    cursor: pointer;
+    border: none;
+}
+
+.btn-vibrant:hover {
+    transform: scale(1.05) translateY(-2px);
+    filter: brightness(1.1);
+}
+
+/* Custom Scrollbar - Vibrant Blue */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-soft);
+}
