@@ -41,16 +41,18 @@ const VisionMission = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                         >
-                            <div className="benchmark-icon">
-                                <Eye size={32} />
+                            <div className="vm-icon-shield">
+                                <Eye size={36} />
                             </div>
-                            <h3>Our Vision</h3>
-                            <p>
-                                To be a global leader in innovative and quality products for poultry
-                                and aquaculture industry with world-class services to improve animal
-                                performance and strive to be the strongest organization best known
-                                for ethical business.
-                            </p>
+                            <div className="vm-content-wrap">
+                                <h3>Our Vision</h3>
+                                <p>
+                                    To be a global leader in innovative and quality products for poultry
+                                    and aquaculture industry with world-class services to improve animal
+                                    performance and strive to be the strongest organization best known
+                                    for ethical business.
+                                </p>
+                            </div>
                         </motion.div>
 
                         <motion.div
@@ -60,15 +62,17 @@ const VisionMission = () => {
                             viewport={{ once: true }}
                             transition={{ delay: 0.2 }}
                         >
-                            <div className="benchmark-icon">
-                                <Rocket size={32} />
+                            <div className="vm-icon-shield">
+                                <Rocket size={36} />
                             </div>
-                            <h3>Our Mission</h3>
-                            <p>
-                                To build a brand committed to establish a benchmark for high-quality
-                                Healthcare products with a mission of growing together with all
-                                our stakeholders.
-                            </p>
+                            <div className="vm-content-wrap">
+                                <h3>Our Mission</h3>
+                                <p>
+                                    To build a brand committed to establish a benchmark for high-quality
+                                    Healthcare products with a mission of growing together with all
+                                    our stakeholders.
+                                </p>
+                            </div>
                         </motion.div>
                     </div>
                 </div>
@@ -79,14 +83,14 @@ const VisionMission = () => {
                     <div className="cta-glass-panel">
                         <div className="cta-content">
                             <span className="section-tag" style={{ color: 'var(--accent-gold)' }}>Core Values</span>
-                            <h2 style={{ color: 'white', marginBottom: '3rem' }}>The Clinical Standard.</h2>
+                            <h2 style={{ color: 'white', marginBottom: '1.25rem' }}>The Clinical Standard.</h2>
 
                             <div className="benchmarks-grid">
                                 {[
-                                    { icon: <Shield size={32} />, label: 'Integrity', desc: 'Uncompromising ethical standards in every operation.' },
-                                    { icon: <Zap size={32} />, label: 'Innovation', desc: 'Driving progress through molecular research.' },
-                                    { icon: <Target size={32} />, label: 'Excellence', desc: 'Delivering precision in clinical solutions.' },
-                                    { icon: <Gem size={32} />, label: 'Commitment', desc: 'Absolute dedication to animal healthcare.' }
+                                    { icon: <Shield size={20} />, label: 'Integrity', desc: 'Uncompromising ethical standards in every operation.' },
+                                    { icon: <Zap size={20} />, label: 'Innovation', desc: 'Driving progress through molecular research.' },
+                                    { icon: <Target size={20} />, label: 'Excellence', desc: 'Delivering precision in clinical solutions.' },
+                                    { icon: <Gem size={20} />, label: 'Commitment', desc: 'Absolute dedication to animal healthcare.' }
                                 ].map((item, i) => (
                                     <motion.div
                                         key={i}

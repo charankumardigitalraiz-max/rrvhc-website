@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, BookOpen, Download, ArrowUpRight, CheckCircle, ShieldCheck, Tag, ChevronRight } from 'lucide-react';
@@ -35,17 +35,21 @@ const allProducts = [
 ];
 
 const categoryMeta = {
-    'Poultry Science': { color: '#0f4c81', image: '/poultry_hero_new.png' },
-    'Aquaculture': { color: '#0e7490', image: '/aquaculture_custom.png' },
-    'Large Animal Health': { color: '#7c3aed', image: '/livestock_custom.png' },
-    'Small Ruminants': { color: '#b45309', image: '/sheep_goat_division_premium.png' },
-    'Canine Care': { color: '#065f46', image: '/canine_custom.png' },
+    'Poultry Science': { image: '/poultry_hero_new.png' },
+    'Aquaculture': { image: '/aquaculture_custom.png' },
+    'Large Animal Health': { image: '/livestock_custom.png' },
+    'Small Ruminants': { image: '/sheep_goat_division_premium.png' },
+    'Canine Care': { image: '/canine_custom.png' },
 };
 
 const ProductDetailPage = () => {
     const { slug } = useParams();
     const navigate = useNavigate();
     const product = allProducts.find(p => p.slug === slug);
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [slug]);
 
     if (!product) {
         return (
@@ -58,6 +62,7 @@ const ProductDetailPage = () => {
 
     const meta = categoryMeta[product.category];
     const related = allProducts.filter(p => p.category === product.category && p.slug !== product.slug).slice(0, 3);
+    const themeColor = '#00599a';
 
     return (
         <motion.div
@@ -68,7 +73,7 @@ const ProductDetailPage = () => {
             transition={{ duration: 0.35 }}
         >
             {/* Hero Banner */}
-            <section className="pdp-hero" style={{ background: `linear-gradient(135deg, ${meta.color} 0%, ${meta.color}cc 100%)` }}>
+            <section className="pdp-hero" style={{ background: `linear-gradient(135deg, ${themeColor} 0%, ${themeColor}cc 100%)` }}>
                 <img src={meta.image} alt={product.category} className="pdp-hero-bg" />
                 <div className="pdp-hero-overlay"></div>
                 <div className="container pdp-hero-inner">
@@ -103,7 +108,7 @@ const ProductDetailPage = () => {
                             <ul className="pdp-benefits-list">
                                 {product.benefits.map((b, i) => (
                                     <li key={i} className="pdp-benefit-item">
-                                        <CheckCircle size={18} style={{ color: meta.color }} />
+                                        <CheckCircle size={18} style={{ color: themeColor }} />
                                         <span>{b}</span>
                                     </li>
                                 ))}
@@ -155,18 +160,21 @@ const ProductDetailPage = () => {
                             initial={{ opacity: 0, x: 20 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: 0.15 }}
-                            style={{ '--ac-color': meta.color }}
+                            style={{ '--ac-color': themeColor }}
                         >
-                            <div className="pdp-ac-icon" style={{ background: `${meta.color}18`, color: meta.color }}>
+                            <div className="pdp-ac-icon" style={{ background: `${themeColor}18`, color: themeColor }}>
                                 <BookOpen size={28} />
                             </div>
                             <h3>Product Brochure</h3>
                             <p>Download the full product specification sheet and brochure.</p>
-                            <button className="pdp-download-btn" style={{ background: meta.color }}>
-                                <Download size={16} />
-                                Download Brochure
-                            </button>
-                            <span className="pdp-coming-soon-note">Brochure coming soon</span>
+                            {product.brochure ? (
+                                <button className="pdp-download-btn" style={{ background: themeColor }}>
+                                    <Download size={16} />
+                                    Download Brochure
+                                </button>
+                            ) : (
+                                <p style={{ fontSize: '0.9rem', opacity: 0.6, marginTop: '1rem' }}>Brochure will be available soon for digital download.</p>
+                            )}
                         </motion.div>
 
                         <motion.div

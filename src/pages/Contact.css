@@ -67,14 +67,14 @@
 .contact-info-card:hover {
     transform: translateY(-8px);
     box-shadow: var(--shadow-premium);
-    border-color: var(--primary-blue-light);
+    border-color: var(--primary-brand);
 }
 
 .ci-icon {
     width: 56px;
     height: 56px;
-    background: var(--neutral-50);
-    color: var(--primary-blue);
+    background: var(--bg-soft);
+    color: var(--primary-brand);
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -85,7 +85,7 @@
 .contact-info-card h3 {
     font-size: 1.15rem;
     margin-bottom: 1rem;
-    color: var(--primary-navy);
+    color: var(--text-heading);
 }
 
 .ci-lines p {
@@ -136,12 +136,60 @@
 }
 
 .form-group label {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-weight: 800;
     color: var(--primary-navy);
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    opacity: 0.6;
+    letter-spacing: 0.08em;
+    opacity: 0.7;
+}
+
+/* --- Compact Form Variant --- */
+.inquiry-form-wrapper.compact {
+    padding: 3rem;
+}
+
+.inquiry-form-wrapper.compact .form-head {
+    margin-bottom: 2rem;
+}
+
+.inquiry-form-wrapper.compact .form-head .section-title {
+    font-size: 1.75rem;
+}
+
+.inquiry-form-wrapper.compact .premium-form {
+    gap: 1.5rem;
+}
+
+.inquiry-form-wrapper.compact .form-row {
+    gap: 1.5rem;
+}
+
+.inquiry-form-wrapper.compact .form-group {
+    gap: 0.75rem;
+}
+
+.inquiry-form-wrapper.compact input,
+.inquiry-form-wrapper.compact textarea {
+    padding: 0.85rem 1.25rem;
+    font-size: 0.95rem;
+}
+
+.inquiry-form-wrapper.compact .form-icon-group input,
+.inquiry-form-wrapper.compact .form-icon-group textarea {
+    padding-left: 3.5rem;
+}
+
+.inquiry-form-wrapper.compact .input-icon {
+    left: 1rem;
+}
+
+.inquiry-form-wrapper.compact .form-icon-group::after {
+    left: 2.6rem;
+}
+
+.inquiry-form-wrapper.compact textarea {
+    min-height: 120px;
 }
 
 .form-icon-group {
@@ -156,10 +204,35 @@
 
 .input-icon {
     position: absolute;
-    left: 1.5rem;
+    left: 1.25rem;
     color: var(--primary-blue);
     pointer-events: none;
     transition: var(--transition-smooth);
+    z-index: 10;
+}
+
+.form-icon-group::after {
+    content: '';
+    position: absolute;
+    left: 3rem;
+    top: 25%;
+    bottom: 25%;
+    width: 1px;
+    background: var(--neutral-300);
+    opacity: 0.3;
+    z-index: 5;
+    transition: var(--transition-smooth);
+}
+
+.form-icon-group.align-top::after {
+    top: 1rem;
+    bottom: auto;
+    height: 1.5rem;
+}
+
+.form-icon-group:focus-within::after {
+    background: var(--primary-brand);
+    opacity: 0.5;
 }
 
 .form-group input,
@@ -184,12 +257,12 @@
 .form-group input:focus,
 .form-group textarea:focus {
     background: white;
-    border-color: var(--primary-blue);
-    box-shadow: 0 10px 30px -10px rgba(34, 197, 94, 0.15);
+    border-color: var(--primary-brand);
+    box-shadow: 0 10px 30px -10px rgba(2, 132, 199, 0.1);
 }
 
-.form-group input:focus + .input-icon,
-.form-group textarea:focus + .input-icon {
+.form-group input:focus+.input-icon,
+.form-group textarea:focus+.input-icon {
     color: var(--primary-navy);
 }
 

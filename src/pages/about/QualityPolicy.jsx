@@ -134,8 +134,8 @@ const QualityPolicy = () => {
                     <div className="cta-glass-panel">
                         <div className="cta-content">
                             <ShieldCheck size={80} className="mx-auto mb-6" style={{ color: 'var(--accent-gold)' }} />
-                            <h2 style={{ color: 'white' }}>ISO 9001:2015 CERTIFIED</h2>
-                            <p style={{ color: 'rgba(255,255,255,0.7)', maxWidth: '700px', marginInline: 'auto' }}>
+                            <h3 style={{ color: 'white' }}>ISO 9001:2015 CERTIFIED</h3>
+                            <p style={{ color: 'rgba(255,255,255,0.7)', maxWidth: '700px', marginInline: 'auto', fontSize: '17px', lineHeight: '1.7', marginTop: "10px" }}>
                                 Our state-of-the-art manufacturing facility undergoes periodic independent audits
                                 to ensure the highest levels of molecular compliance and clinical safety in the animal health sector.
                             </p>

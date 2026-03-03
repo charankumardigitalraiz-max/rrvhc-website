@@ -14,13 +14,50 @@ import {
 import './Home.css';
 
 const Home = () => {
+    // Animation Variants
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.15,
+                delayChildren: 0.1
+            }
+        }
+    };
+
+    const itemVariants = {
+        hidden: { opacity: 0, y: 30 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                type: "spring",
+                stiffness: 100,
+                damping: 15
+            }
+        }
+    };
+
+    const sectionVariants = {
+        hidden: { opacity: 0, y: 50 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 0.8,
+                ease: [0.22, 1, 0.36, 1]
+            }
+        }
+    };
+
     return (
         <motion.div
             className="home-page"
-            initial={{ opacity: 0.4 }}
+            initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.4 }}
+            transition={{ duration: 0.6 }}
         >
             {/* Hero Section */}
             <section className="hero-section">
@@ -28,9 +65,9 @@ const Home = () => {
                     <div className="hero-content">
                         <motion.div
                             className="hero-badge"
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.2 }}
+                            initial={{ opacity: 0, scale: 0.8, y: 20 }}
+                            animate={{ opacity: 1, scale: 1, y: 0 }}
+                            transition={{ duration: 0.6, ease: "easeOut" }}
                         >
                             <span className="pulse-dot" style={{ background: 'var(--accent-green)' }}></span>
                             <span>Global Leader in Veterinary Formulations</span>
@@ -38,9 +75,9 @@ const Home = () => {
 
                         <motion.h1
                             className="hero-title"
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.3, duration: 0.8 }}
+                            initial={{ opacity: 0, x: -50 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: 0.2, duration: 1, ease: [0.16, 1, 0.3, 1] }}
                         >
                             Advancing <br />
                             <span className="text-gradient-green">Clinical Precision.</span>
@@ -48,9 +85,9 @@ const Home = () => {
 
                         <motion.p
                             className="hero-desc"
-                            initial={{ opacity: 0, y: 30 }}
+                            initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.5, duration: 0.8 }}
+                            transition={{ delay: 0.4, duration: 0.8 }}
                         >
                             RR Veterinary Health Care Private Limited engineers advanced
                             molecular solutions for optimal livestock metabolic performance,
@@ -60,9 +97,9 @@ const Home = () => {
 
                         <motion.div
                             className="hero-actions"
-                            initial={{ opacity: 0, y: 30 }}
+                            initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.7 }}
+                            transition={{ delay: 0.6, duration: 0.6 }}
                         >
                             <Link to="/products" className="premium-btn-primary">
                                 Explore Portfolio <ArrowRight size={18} />
@@ -75,9 +112,9 @@ const Home = () => {
 
                     <motion.div
                         className="hero-visual"
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: 0.4, duration: 1 }}
+                        initial={{ opacity: 0, scale: 0.9, rotate: -2 }}
+                        animate={{ opacity: 1, scale: 1, rotate: 0 }}
+                        transition={{ delay: 0.3, duration: 1.2, ease: "easeOut" }}
                     >
                         <div className="visual-background">
                             <div className="blob blob-1"></div>
@@ -92,8 +129,8 @@ const Home = () => {
                         {/* Floating Status Cards */}
                         <motion.div
                             className="status-card sc-top"
-                            animate={{ y: [0, -10, 0] }}
-                            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                            animate={{ y: [0, -12, 0], rotate: [0, 1, 0] }}
+                            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
                         >
                             <div className="sc-icon blue"><ShieldCheck size={20} /></div>
                             <div className="sc-info">
@@ -104,8 +141,8 @@ const Home = () => {
 
                         <motion.div
                             className="status-card sc-bottom"
-                            animate={{ y: [0, 10, 0] }}
-                            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                            animate={{ y: [0, 12, 0], rotate: [0, -1, 0] }}
+                            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
                         >
                             <div className="sc-icon gold"><Award size={20} /></div>
                             <div className="sc-info">
@@ -118,7 +155,13 @@ const Home = () => {
             </section>
 
             {/* Stats Bar */}
-            <section className="stats-bar">
+            <motion.section
+                className="stats-bar"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-100px" }}
+                variants={sectionVariants}
+            >
                 <div className="container">
                     <div className="stats-grid">
                         <div className="stat-item">
@@ -142,18 +185,30 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-            </section>
+            </motion.section>
 
             {/* Core Capabilities */}
             <section className="capabilities-section section-spacing">
                 <div className="container">
-                    <div className="section-header centered">
+                    <motion.div
+                        className="section-header centered"
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                        variants={sectionVariants}
+                    >
                         <span className="section-tag">Core Competencies</span>
                         <h2 className="section-title">Technological <span className="text-gradient-green">Excellence.</span></h2>
                         <p className="section-subtitle">Our vertical integration ensures unparalleled quality control from molecule to flock.</p>
-                    </div>
+                    </motion.div>
 
-                    <div className="capabilities-grid">
+                    <motion.div
+                        className="capabilities-grid"
+                        variants={containerVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.2 }}
+                    >
                         {[
                             {
                                 icon: <Microscope />,
@@ -179,15 +234,19 @@ const Home = () => {
                             <motion.div
                                 key={i}
                                 className="capability-card"
-                                whileHover={{ y: -10 }}
-                                transition={{ duration: 0.3 }}
+                                variants={itemVariants}
+                                whileHover={{
+                                    y: -15,
+                                    boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.15)",
+                                    transition: { duration: 0.4, ease: "easeOut" }
+                                }}
                             >
                                 <div className="cap-icon">{cap.icon}</div>
                                 <h3>{cap.title}</h3>
                                 <p>{cap.desc}</p>
                             </motion.div>
                         ))}
-                    </div>
+                    </motion.div>
                 </div>
             </section>
 
@@ -195,7 +254,13 @@ const Home = () => {
             <section className="divisions-section section-spacing bg-white">
                 <div className="container">
                     <div className="division-flex">
-                        <div className="division-content-main">
+                        <motion.div
+                            className="division-content-main"
+                            initial={{ opacity: 0, x: -50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8, ease: "easeOut" }}
+                        >
                             <span className="section-tag">Strategic Units</span>
                             <h2 className="section-title">Industrial <span className="text-gradient-green">Divisions.</span></h2>
                             <p className="section-desc">
@@ -203,87 +268,111 @@ const Home = () => {
                                 interventions that maximize biological potential and commercial outcomes.
                             </p>
 
-                            <div className="division-list">
-                                <div className="div-list-item">
-                                    <div className="div-dot"></div>
-                                    <div className="div-text">
-                                        <h4>Poultry Science</h4>
-                                        <p>Comprehensive health solutions including growth promoters, toxin binders, and advanced biosecurity protocols.</p>
-                                    </div>
-                                </div>
-                                <div className="div-list-item">
-                                    <div className="div-dot"></div>
-                                    <div className="div-text">
-                                        <h4>Sheep & Goat Care</h4>
-                                        <p>Targeted nutritional supplements designed to strengthen immune systems and prevent infectious diseases.</p>
-                                    </div>
-                                </div>
-                                <div className="div-list-item">
-                                    <div className="div-dot"></div>
-                                    <div className="div-text">
-                                        <h4>Aquaculture Solutions</h4>
-                                        <p>Marine-grade probiotics, water quality management, and advanced pond bioremediation systems.</p>
-                                    </div>
-                                </div>
-                                <div className="div-list-item">
-                                    <div className="div-dot"></div>
-                                    <div className="div-text">
-                                        <h4>Canine Division</h4>
-                                        <p>Comprehensive health solutions for companion animals, including B-Com More and biosecurity agents.</p>
-                                    </div>
-                                </div>
-                            </div>
+                            <motion.div
+                                className="division-list"
+                                variants={containerVariants}
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ once: true }}
+                            >
+                                {[
+                                    {
+                                        title: "Poultry Science",
+                                        desc: "Comprehensive health solutions including growth promoters, toxin binders, and advanced biosecurity protocols."
+                                    },
+                                    {
+                                        title: "Sheep & Goat Care",
+                                        desc: "Targeted nutritional supplements designed to strengthen immune systems and prevent infectious diseases."
+                                    },
+                                    {
+                                        title: "Aquaculture Solutions",
+                                        desc: "Marine-grade probiotics, water quality management, and advanced pond bioremediation systems."
+                                    },
+                                    {
+                                        title: "Canine Division",
+                                        desc: "Comprehensive health solutions for companion animals, including B-Com More and biosecurity agents."
+                                    }
+                                ].map((div, i) => (
+                                    <motion.div key={i} className="div-list-item" variants={itemVariants}>
+                                        <div className="div-dot"></div>
+                                        <div className="div-text">
+                                            <h4>{div.title}</h4>
+                                            <p>{div.desc}</p>
+                                        </div>
+                                    </motion.div>
+                                ))}
+                            </motion.div>
 
-                            <Link to="/products" className="premium-btn-primary mt-4">
-                                View Full Portfolio
-                            </Link>
-                        </div>
+                            <motion.div
+                                initial={{ opacity: 0 }}
+                                whileInView={{ opacity: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: 0.8 }}
+                            >
+                                <Link to="/products" className="premium-btn-primary mt-4">
+                                    View Full Portfolio
+                                </Link>
+                            </motion.div>
+                        </motion.div>
 
-                        <div className="division-visual-grid">
-                            <div className="div-card-mini dc-1">
-                                <img src="/poultry_division_premium.png" alt="Poultry Division" />
-                                <div className="dc-overlay">
-                                    <span>Poultry</span>
-                                </div>
-                            </div>
-                            <div className="div-card-mini dc-2">
-                                <img src="/sheep_goat_division_premium.png" alt="Sheep & Goat Division" />
-                                <div className="dc-overlay">
-                                    <span>Sheep & Goat</span>
-                                </div>
-                            </div>
-                            <div className="div-card-mini dc-3">
-                                <img src="/aquaculture_premium_hero_1772433528334.png" alt="Aquaculture Division" />
-                                <div className="dc-overlay">
-                                    <span>Aquaculture</span>
-                                </div>
-                            </div>
-                            <div className="div-card-mini dc-4">
-                                <img src="/canine_division_premium.png" alt="Canine Division" />
-                                <div className="dc-overlay">
-                                    <span>Canine</span>
-                                </div>
-                            </div>
-                        </div>
+                        <motion.div
+                            className="division-visual-grid"
+                            variants={containerVariants}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true }}
+                        >
+                            {[
+                                { src: "/poultry_division_premium.png", label: "Poultry" },
+                                { src: "/sheep_goat_division_premium.png", label: "Sheep & Goat" },
+                                { src: "/aquaculture_premium_hero_1772433528334.png", label: "Aquaculture" },
+                                { src: "/canine_division_premium.png", label: "Canine" }
+                            ].map((img, i) => (
+                                <motion.div
+                                    key={i}
+                                    className={`div-card-mini dc-${i + 1}`}
+                                    variants={itemVariants}
+                                    whileHover={{ scale: 1.05, zIndex: 10 }}
+                                >
+                                    <img src={img.src} alt={img.label} />
+                                    <div className="dc-overlay">
+                                        <span>{img.label}</span>
+                                    </div>
+                                </motion.div>
+                            ))}
+                        </motion.div>
                     </div>
                 </div>
             </section>
 
             {/* CTA Section */}
-            <section className="cta-home-section">
+            <motion.section
+                className="cta-home-section"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={sectionVariants}
+            >
                 <div className="container">
-                    <div className="cta-glass-panel">
+                    <div
+                        className="cta-glass-panel"
+                        style={{
+                            backgroundImage: 'linear-gradient(to bottom, rgba(15, 17, 42, 0.4), rgba(15, 17, 42, 0.8)), url(/cta_banner_animal.png)',
+                            backgroundSize: 'cover',
+                            backgroundPosition: 'center'
+                        }}
+                    >
                         <div className="cta-content">
                             <h2>Partner with the Pioneers of <br /><span>Veterinary Innovation.</span></h2>
                             <p>Connect with our technical consultants for customized health protocols.</p>
                             <div className="cta-btns">
-                                <Link to="/contact" className="premium-btn-primary">Connect with HQ</Link>
+                                <Link to="/contact" className="premium-btn-white">Connect with HQ</Link>
                                 <Link to="/partner" className="premium-btn-outline white">Partnership Inquiry</Link>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
+            </motion.section>
         </motion.div>
     );
 };

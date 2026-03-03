@@ -10,7 +10,7 @@
 /* --- Hero Sections --- */
 .suite-hero,
 .about-hero {
-    padding-block: 4rem;
+    padding-block: 2rem 1rem;
     background: var(--neutral-50);
     position: relative;
     overflow: hidden;
@@ -62,11 +62,12 @@
     position: absolute;
     bottom: -2rem;
     right: -2rem;
-    background: var(--primary-navy);
+    background: linear-gradient(135deg, var(--primary-brand) 0%, #032d52 100%);
     color: white;
     padding: 2rem 3rem;
     border-radius: var(--radius-md);
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 30px 60px rgba(9, 79, 138, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     z-index: 5;
     display: flex;
     flex-direction: column;
@@ -134,17 +135,17 @@
 .quote-box {
     margin-top: 3rem;
     padding: 2rem;
-    background: white;
-    border-left: 4px solid var(--accent-gold);
+    background: rgba(9, 79, 138, 0.03);
+    border-left: 4px solid var(--accent-vivid);
     border-radius: 0 var(--radius-md) var(--radius-md) 0;
     font-style: italic;
-    color: var(--primary-navy);
-    font-weight: 500;
+    color: var(--primary-brand);
+    font-weight: 600;
 }
 
 /* --- Cards --- */
 .benchmark-card-premium {
-    padding: 3rem;
+    padding: 1.5rem;
     background: var(--neutral-50);
     border-radius: var(--radius-lg);
     border: 1px solid var(--neutral-100);
@@ -156,39 +157,42 @@
     background: white;
     transform: translateY(-8px);
     box-shadow: var(--shadow-premium);
-    border-color: var(--primary-blue-light);
+    border-color: var(--primary-brand);
 }
 
 .benchmark-icon {
-    width: 70px;
-    height: 70px;
+    width: 52px;
+    height: 52px;
     background: white;
     box-shadow: var(--shadow-md);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 2rem;
+    margin: 0 auto 1rem;
     color: var(--primary-navy);
 }
 
 /* --- Grids --- */
 .benchmarks-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.25rem;
+    margin-top: 1.5rem;
 }
 
 /* --- Glass Panels --- */
 .cta-glass-panel {
-    background: var(--primary-navy);
-    padding: 3rem 4rem;
+    background: white;
+    background-image: radial-gradient(circle at top right, rgba(2, 132, 199, 0.05), transparent 70%);
+    padding: 3rem;
     border-radius: var(--radius-lg);
     text-align: center;
     position: relative;
     overflow: hidden;
-    color: white;
+    color: var(--text-main);
+    border: 1px solid var(--border-subtle);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.03);
 }
 
 .cta-glass-panel::before {
@@ -208,9 +212,9 @@
 .mission-vision-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    gap: 2.5rem;
     align-items: stretch;
-    max-width: 1000px;
+    max-width: 1200px;
     margin-inline: auto;
 }
 
@@ -222,49 +226,131 @@
 
 .vm-card {
     background: white;
-    padding: 2rem;
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-md);
-    border-top: 5px solid var(--primary-blue);
+    padding: 3rem;
+    border-radius: 24px;
+    border: 1px solid var(--neutral-100);
     display: flex;
-    flex-direction: column;
-    height: 100%;
-    transition: var(--transition-smooth);
+    align-items: center;
+    gap: 3rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.vm-card::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 40%;
+    background: var(--primary-blue);
+    border-radius: 0 4px 4px 0;
+    transition: height 0.3s ease;
+}
+
+.vm-card.mission::after {
+    background: var(--primary-green);
 }
 
 .vm-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-premium);
+    transform: translateY(-10px);
+    box-shadow: 0 40px 80px -20px rgba(9, 79, 138, 0.25);
+    border-color: var(--accent-vivid);
 }
 
-.vm-card.mission {
-    border-top-color: var(--accent-gold);
+.vm-card.mission:hover {
+    border-color: var(--accent-green);
+    box-shadow: 0 40px 80px -20px rgba(57, 181, 74, 0.2);
+}
+
+.vm-card:hover::after {
+    height: 60%;
+}
+
+.vm-icon-shield {
+    width: 80px;
+    height: 80px;
+    background: var(--neutral-50);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-blue);
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.vm-card.mission .vm-icon-shield {
+    color: var(--primary-green);
+}
+
+.vm-card:hover .vm-icon-shield {
+    background: var(--primary-brand);
+    color: white;
+    transform: scale(1.1) rotate(-5deg);
+}
+
+.vm-card.mission:hover .vm-icon-shield {
+    background: var(--accent-green);
+}
+
+.vm-content-wrap {
+    flex: 1;
 }
 
 .vm-card h3 {
-    font-size: 1.35rem;
+    font-size: 1.5rem;
     color: var(--primary-navy);
-    margin-bottom: 1.25rem;
+    margin-bottom: 0.75rem;
+    font-weight: 800;
 }
 
 .vm-card p {
     font-size: 1.05rem;
-    line-height: 1.8;
+    line-height: 1.7;
     color: var(--neutral-600);
+    margin: 0;
 }
 
-.vm-card .benchmark-icon {
-    margin-left: 0;
-    margin-right: auto;
-    margin-bottom: 1.25rem;
-    background: var(--neutral-50);
+/* Responsive adjustment for VM cards */
+@media (max-width: 991px) {
+    .vm-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 2.5rem;
+        gap: 1.5rem;
+    }
+
+    .vm-icon-shield {
+        margin: 0 auto;
+    }
+
+    .vm-card::after {
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+        width: 40%;
+        height: 6px;
+        border-radius: 0 0 4px 4px;
+    }
+
+    .vm-card:hover {
+        transform: translateY(-10px);
+    }
+
+    .vm-card:hover::after {
+        width: 60%;
+        height: 6px;
+    }
 }
 
 /* --- Management Specific --- */
 .leaders-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 3rem;
+    gap: 1.5rem;
 }
 
 .inquiry-form-wrapper {
@@ -274,30 +360,108 @@
     border: 1px solid var(--neutral-100);
 }
 
-.leader-card {
+.leader-card-horizontal {
     background: white;
-    padding: 3rem;
-    border-radius: var(--radius-lg);
+    border-radius: 24px;
     border: 1px solid var(--neutral-100);
-    text-align: center;
-    transition: var(--transition-smooth);
+    display: flex;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    height: 100%;
 }
 
-.leader-card:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow-premium);
+.leader-card-horizontal:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px -20px rgba(0, 89, 154, 0.12);
+    border-color: var(--primary-blue);
 }
 
-.leader-avatar {
-    width: 100px;
-    height: 100px;
+.leader-image-wrap {
+    width: 180px;
     background: var(--neutral-50);
-    border-radius: 50%;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.leader-img-large {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.leader-card-horizontal:hover .leader-img-large {
+    transform: scale(1.05);
+}
+
+.leader-content-profile {
+    padding: 2rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.leader-role-tag {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--primary-blue);
+    margin-bottom: 0.75rem;
+    display: block;
+}
+
+.leader-name {
+    font-size: 1.5rem;
+    color: var(--primary-navy);
+    margin-bottom: 1rem;
+    font-weight: 800;
+}
+
+.leader-bio {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--neutral-600);
+    margin-bottom: 2rem;
+    flex: 1;
+}
+
+.leader-social-bar {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icon-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 2rem;
+    background: var(--neutral-50);
     color: var(--primary-navy);
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-icon-btn:hover {
+    background: var(--primary-blue);
+    color: white;
+    transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+    .leader-card-horizontal {
+        flex-direction: column;
+    }
+
+    .leader-image-wrap {
+        width: 100%;
+        height: 240px;
+    }
 }
 
 /* --- Gallery --- */
@@ -334,7 +498,7 @@
 .gallery-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(15, 76, 129, 0.9), transparent);
+    background: linear-gradient(to top, rgba(0, 89, 154, 0.9), transparent);
     opacity: 0;
     transition: opacity 0.3s ease;
     display: flex;
@@ -470,7 +634,7 @@
 
 /* --- About Suite Common --- */
 .section-spacing {
-    padding-block: 3rem;
+    padding-block: 1rem 3rem;
 }
 
 .section-tag {
@@ -495,7 +659,7 @@
 }
 
 .text-gradient-blue {
-    background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-blue) 100%);
+    background: linear-gradient(135deg, var(--secondary-brand) 0%, var(--primary-brand) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;

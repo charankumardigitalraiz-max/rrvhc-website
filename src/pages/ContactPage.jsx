@@ -108,7 +108,7 @@ const ContactPage = () => {
                 <div className="container">
                     <div className="inquiry-container">
                         <motion.div
-                            className="inquiry-form-wrapper"
+                            className="inquiry-form-wrapper compact"
                             initial={{ opacity: 0, y: 40 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
@@ -150,7 +150,7 @@ const ContactPage = () => {
                                         <textarea rows="5" placeholder="Your message here..."></textarea>
                                     </div>
                                 </div>
-                                <button type="submit" className="premium-btn-primary w-full py-4">
+                                <button type="submit" className="premium-btn-primary w-full">
                                     Submit Inquiry <Send size={18} />
                                 </button>
                             </form>

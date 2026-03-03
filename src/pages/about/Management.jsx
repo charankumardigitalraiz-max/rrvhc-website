@@ -8,12 +8,14 @@ const Management = () => {
         {
             name: 'Mr. Y. Ram Mohan Rao',
             role: 'Chairman & Managing Director',
-            bio: 'A visionary leader in industrial veterinary health with decades of experience in global market development and manufacturing excellence.'
+            bio: 'A visionary leader in industrial veterinary health with decades of experience in global market development and manufacturing excellence.',
+            image: '/director.jpg'
         },
         {
             name: 'Dr. Sreekanth Devalraju',
             role: 'Technical Director',
-            bio: 'Expert in clinical formulations and biological catalysts, driving the scientific innovation and technical integrity of RRVHC.'
+            bio: 'Expert in clinical formulations and biological catalysts, driving the scientific innovation and technical integrity of RRVHC.',
+            image: '/manager.jpg'
         }
     ];
 
@@ -106,27 +108,29 @@ const Management = () => {
                         </p>
                     </div>
 
-                    <div className="leaders-grid" style={{ marginTop: '4rem' }}>
+                    <div className="leaders-grid" style={{ marginTop: '3rem' }}>
                         {leaders.map((person, i) => (
                             <motion.div
                                 key={person.name}
-                                className="leader-card"
+                                className="leader-card-horizontal"
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: i * 0.2 }}
                             >
-                                <div className="leader-avatar">
-                                    <UserRound size={48} />
+                                <div className="leader-image-wrap">
+                                    <img src={person.image} alt={person.name} className="leader-img-large" />
                                 </div>
-                                <span className="section-tag" style={{ color: 'var(--primary-blue)', marginBottom: '0.5rem' }}>{person.role}</span>
-                                <h3 style={{ fontSize: '1.5rem', marginBottom: '1.5rem' }}>{person.name}</h3>
-                                <p style={{ opacity: 0.7, lineHeight: '1.8', fontSize: '1rem' }}>
-                                    {person.bio}
-                                </p>
-                                <div className="social-links justify-center" style={{ marginTop: '2rem', display: 'flex', gap: '1.5rem', justifyContent: 'center' }}>
-                                    <a href="#" style={{ color: 'var(--primary-navy)', opacity: 0.6 }}><Linkedin size={20} /></a>
-                                    <a href="#" style={{ color: 'var(--primary-navy)', opacity: 0.6 }}><Mail size={20} /></a>
+                                <div className="leader-content-profile">
+                                    <span className="leader-role-tag">{person.role}</span>
+                                    <h3 className="leader-name">{person.name}</h3>
+                                    <p className="leader-bio">
+                                        {person.bio}
+                                    </p>
+                                    <div className="leader-social-bar">
+                                        <a href="#" className="social-icon-btn"><Linkedin size={18} /></a>
+                                        <a href="#" className="social-icon-btn"><Mail size={18} /></a>
+                                    </div>
                                 </div>
                             </motion.div>
                         ))}

@@ -74,7 +74,7 @@ const Gallery = () => {
                     <div className="cta-glass-panel">
                         <div className="cta-content flex items-center justify-between">
                             <div className="text-left">
-                                <h2 style={{ color: 'white', margin: 0 }}>Discover Our Industrial <br />Excellence in Action.</h2>
+                                <h3 style={{ color: 'white', margin: 0 }}>Discover Our Industrial <br />Excellence in Action.</h3>
                             </div>
                             <div className="flex gap-4">
                                 <Camera size={48} className="text-gold opacity-50" />
