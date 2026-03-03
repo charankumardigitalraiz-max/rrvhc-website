@@ -1,0 +1,429 @@
+/* ================================
+   Product Detail Page (PDP) Styles
+================================ */
+
+.pdp-page {
+    position: relative;
+    padding-top: var(--header-height);
+}
+
+/* --- Hero --- */
+.pdp-hero {
+    position: relative;
+    min-height: 320px;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 3rem;
+    overflow: hidden;
+}
+
+.pdp-hero-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.18;
+}
+
+.pdp-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.2) 100%);
+}
+
+.pdp-hero-inner {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-top: 2.5rem;
+}
+
+.pdp-back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: white;
+    padding: 0.5rem 1.2rem;
+    border-radius: 8px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+    width: fit-content;
+    backdrop-filter: blur(6px);
+}
+
+.pdp-back-btn:hover {
+    background: rgba(255, 255, 255, 0.28);
+}
+
+.pdp-hero-content {
+    color: white;
+}
+
+.pdp-cat-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 0.3rem 1rem;
+    border-radius: 999px;
+    margin-bottom: 1rem;
+}
+
+.pdp-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    color: white;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 16px rgba(0,0,0,0.3);
+}
+
+.pdp-hero-desc {
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 1.1rem;
+    line-height: 1.65;
+    max-width: 700px;
+    margin-bottom: 1.25rem;
+}
+
+.pdp-tag-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    padding: 0.35rem 1rem;
+    border-radius: 999px;
+}
+
+/* --- Body --- */
+.pdp-body {
+    padding-top: 3.5rem;
+    padding-bottom: 5rem;
+}
+
+.pdp-grid {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 3rem;
+    align-items: flex-start;
+    margin-bottom: 5rem;
+}
+
+/* --- Cards --- */
+.pdp-card {
+    background: white;
+    border: 1px solid var(--neutral-100);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.pdp-card:last-child {
+    margin-bottom: 0;
+}
+
+.pdp-section-title {
+    font-size: 1.25rem;
+    color: var(--primary-navy);
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--neutral-100);
+}
+
+.pdp-benefits-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.pdp-benefit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    font-size: 0.95rem;
+    color: var(--text-main);
+    line-height: 1.5;
+}
+
+.pdp-benefit-item svg {
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.pdp-composition {
+    font-size: 0.95rem;
+    color: var(--neutral-600);
+    line-height: 1.7;
+    background: var(--neutral-50);
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    border-left: 3px solid var(--primary-blue-light);
+}
+
+.pdp-details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.pdp-detail-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.pdp-detail-label {
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--neutral-400);
+}
+
+.pdp-detail-value {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--primary-navy);
+}
+
+/* --- Aside Cards --- */
+.pdp-action-card {
+    background: white;
+    border: 1px solid var(--neutral-100);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.pdp-ac-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+
+.pdp-action-card h3 {
+    font-size: 1.15rem;
+    color: var(--primary-navy);
+    margin-bottom: 0.75rem;
+}
+
+.pdp-action-card p {
+    font-size: 0.875rem;
+    color: var(--neutral-500);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.pdp-download-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.85rem 1.5rem;
+    border-radius: var(--radius-md);
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.2s, transform 0.2s;
+    margin-bottom: 0.75rem;
+}
+
+.pdp-download-btn:hover {
+    opacity: 0.88;
+    transform: translateY(-2px);
+}
+
+.pdp-coming-soon-note {
+    font-size: 0.75rem;
+    color: var(--neutral-400);
+    font-style: italic;
+}
+
+.pdp-cert-card {
+    background: var(--neutral-50);
+    border: 1px solid var(--neutral-100);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.pdp-cert-card h4 {
+    font-size: 1rem;
+    color: var(--primary-navy);
+    margin: 1rem 0 0.5rem;
+}
+
+.pdp-cert-card p {
+    font-size: 0.82rem;
+    color: var(--neutral-500);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.pdp-contact-card {
+    background: white;
+    border: 1px solid var(--neutral-100);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+}
+
+.pdp-contact-card h4 {
+    font-size: 1rem;
+    color: var(--primary-navy);
+    margin-bottom: 0.6rem;
+}
+
+.pdp-contact-card p {
+    font-size: 0.82rem;
+    color: var(--neutral-500);
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+}
+
+.pdp-contact-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 0.55rem 1.2rem;
+    border-radius: 8px;
+    border: 1.5px solid;
+    transition: background 0.2s;
+}
+
+.pdp-contact-btn:hover {
+    background: var(--neutral-50);
+}
+
+/* --- Related Products --- */
+.pdp-related {
+    border-top: 1px solid var(--neutral-100);
+    padding-top: 4rem;
+}
+
+.pdp-related-title {
+    font-size: 1.75rem;
+    margin-bottom: 2.5rem;
+    color: var(--primary-navy);
+}
+
+.pdp-related-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.pdp-related-card {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border: 1px solid var(--neutral-100);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+.pdp-related-card:hover {
+    box-shadow: var(--shadow-premium);
+    border-color: var(--neutral-200);
+    transform: translateY(-4px);
+}
+
+.prc-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.pdp-related-card h4 {
+    font-size: 0.95rem;
+    color: var(--primary-navy);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.pdp-related-card p {
+    font-size: 0.82rem;
+    color: var(--neutral-500);
+    line-height: 1.6;
+    flex: 1;
+    margin-bottom: 1rem;
+}
+
+.prc-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: auto;
+}
+
+.pdp-not-found {
+    padding: 10rem 2rem;
+    text-align: center;
+}
+
+/* --- Responsive --- */
+@media (max-width: 1024px) {
+    .pdp-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pdp-related-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .pdp-hero {
+        min-height: 260px;
+    }
+
+    .pdp-title {
+        font-size: 2rem;
+    }
+
+    .pdp-details-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pdp-related-grid {
+        grid-template-columns: 1fr;
+    }
+}

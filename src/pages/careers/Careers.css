@@ -1,0 +1,150 @@
+.careers-page {
+    position: relative;
+    padding-top: var(--header-height);
+}
+
+/* --- Application Form specific --- */
+.premium-select {
+    background: white;
+    border: 1px solid var(--neutral-200);
+    padding: 1rem 1.5rem;
+    border-radius: var(--radius-md);
+    font-family: inherit;
+    font-size: 1rem;
+    outline: none;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.premium-select:focus {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 4px rgba(45, 93, 161, 0.05);
+}
+
+.resume-dropzone {
+    border: 2px dashed var(--neutral-200);
+    background: white;
+    padding: 4rem;
+    border-radius: var(--radius-lg);
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    position: relative;
+}
+
+.resume-dropzone:hover {
+    border-color: var(--primary-blue);
+    background: var(--neutral-50);
+}
+
+.resume-dropzone h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.resume-dropzone p {
+    font-size: 0.9rem;
+    opacity: 0.6;
+    margin: 0;
+}
+
+.hidden-file {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* --- Vacancies --- */
+.vacancies-section {
+    padding-inline: 1rem !important;
+}
+
+.vacancies-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.vacancies-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.vacancy-card-premium {
+    background: white;
+    padding: 2.5rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--neutral-100);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    transition: var(--transition-smooth);
+}
+
+.vacancy-card-premium:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-premium);
+    border-color: var(--primary-blue-light);
+}
+
+.vc-info h3 {
+    font-size: 1.35rem;
+    margin-bottom: 0.75rem;
+    color: var(--primary-navy);
+}
+
+.vc-meta {
+    display: flex;
+    gap: 2rem;
+    color: var(--neutral-500);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.vc-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    white-space: nowrap;
+}
+
+.vacancy-card-premium .premium-btn-primary {
+    margin-top: 2rem;
+    width: fit-content;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+}
+
+.general-app-box {
+    background: var(--neutral-50);
+    padding: 4rem;
+    border-radius: var(--radius-lg);
+    text-align: center;
+    border: 1px solid var(--neutral-100);
+}
+
+.general-app-box h3 {
+    margin-bottom: 1rem;
+}
+
+.general-app-box p {
+    margin-bottom: 2.5rem;
+    opacity: 0.7;
+}
+
+@media (max-width: 850px) {
+    .vacancies-list {
+        grid-template-columns: 1fr;
+    }
+
+    .vacancy-card-premium {
+        padding: 2rem;
+    }
+
+    .vc-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
