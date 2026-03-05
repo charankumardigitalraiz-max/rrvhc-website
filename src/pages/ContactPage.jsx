@@ -77,8 +77,8 @@ const ContactPage = () => {
                             title: 'Direct Access',
                             lines: [
                                 'Email: info@rrvhc.in',
-                                'Direct: +91 40 2307 0000',
-                                'Support: tech@rrvhc.in'
+                                'Direct: +91 94904 10562, +91-40 4857 7778',
+                                'Support: info@rrvhc.in, rammohanrao100@gmail.com'
                             ]
                         }
                     ].map((item, i) => (
