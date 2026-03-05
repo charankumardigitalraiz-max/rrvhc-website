@@ -63,15 +63,15 @@ const Footer = () => {
                         <ul className="contact-info">
                             <li>
                                 <MapPin size={18} className="icon" />
-                                <span>Hyderabad, TS, India</span>
+                                <span>Phase IV, Near Kukatpally, Industrial Park, Hyderabad - 500072, Hyderabad, TS, India</span>
                             </li>
                             <li>
                                 <Phone size={18} className="icon" />
-                                <span>+91 000 000 0000</span>
+                                <span>+91 94904 10562</span>
                             </li>
                             <li>
                                 <Mail size={18} className="icon" />
-                                <span>connect@rrvhc.com</span>
+                                <span>info@rrvhc.in</span>
                             </li>
                         </ul>
                     </div>
