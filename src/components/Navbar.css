@@ -314,7 +314,7 @@
 
 .sidebar-btn {
     display: block;
-    padding: 1.15rem;
+    padding: 1rem;
     background: var(--primary-brand);
     color: white;
     text-align: center;
@@ -327,9 +327,10 @@
 }
 
 .sidebar-btn:hover {
-    background: var(--primary-blue);
+    background: var(--accent-green);
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
+    /* color: aqua; */
 }
 
 @media (max-width: 1024px) {

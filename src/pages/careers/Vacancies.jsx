@@ -45,7 +45,7 @@ const Vacancies = () => {
                         >
                             <span className="section-tag">Opportunity // Growth</span>
                             <h1 className="hero-title">
-                                Current <span className="text-gradient-blue">Vacancies.</span>
+                                Current <span className="text-gradient-green">Vacancies.</span>
                             </h1>
                             <p className="hero-desc">
                                 Build your clinical career with the leader in industrial veterinary healthcare.
@@ -76,7 +76,7 @@ const Vacancies = () => {
             <div className="container vacancies-section section-spacing">
                 <div className="vacancies-container">
                     <div className="section-header centered">
-                        <h2 className="section-title">Open <span className="text-gradient-blue">Positions.</span></h2>
+                        <h2 className="section-title">Open <span className="text-gradient-green">Positions.</span></h2>
                     </div>
 
                     <div className="vacancies-list mt-4">

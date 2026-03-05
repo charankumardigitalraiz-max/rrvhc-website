@@ -50,7 +50,7 @@ const Management = () => {
                         >
                             <span className="section-tag">Leadership Board</span>
                             <h1 className="hero-title">
-                                Our <span className="text-gradient-blue">Management.</span>
+                                Our <span className="text-gradient-green">Management.</span>
                             </h1>
                             <p className="hero-desc">
                                 RRVHC is guided by industry veterans with deep clinical, technical, and commercial

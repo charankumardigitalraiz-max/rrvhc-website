@@ -23,7 +23,7 @@ const ContactPage = () => {
                         >
                             <span className="section-tag">Global Connect</span>
                             <h1 className="hero-title">
-                                Contact our <span className="text-gradient-blue">Experts.</span>
+                                Contact our <span className="text-gradient-green">Experts.</span>
                             </h1>
                             <p className="hero-desc">
                                 Reach out to our scientific or commercial divisions for technical support,

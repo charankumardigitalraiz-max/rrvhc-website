@@ -183,8 +183,8 @@
 
 /* --- Glass Panels --- */
 .cta-glass-panel {
-    background: white;
-    background-image: radial-gradient(circle at top right, rgba(2, 132, 199, 0.05), transparent 70%);
+    background: dark;
+    background-image: radial-gradient(circle at top right, rgba(2, 132, 199, 0.05), transparent 70%); 
     padding: 3rem;
     border-radius: var(--radius-lg);
     text-align: center;
@@ -199,7 +199,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at top right, var(--primary-blue), transparent 70%);
+    background: radial-gradient(var(--primary-blue));
     opacity: 0.3;
 }
 

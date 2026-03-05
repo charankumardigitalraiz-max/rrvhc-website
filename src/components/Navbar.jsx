@@ -51,7 +51,7 @@ const Navbar = () => {
             ]
         },
         { name: 'Partnership', path: '/partner' },
-        { name: 'Contact', path: '/contact' }
+        // { name: 'Contact', path: '/contact' }
     ];
 
     const menuVariants = {
@@ -229,7 +229,7 @@ const Navbar = () => {
                             </div>
                             <div className="sidebar-footer">
                                 <Link to="/contact" className="sidebar-btn" onClick={() => setMobileMenuOpen(false)}>
-                                    Inquiry Setup
+                                    Connect now
                                 </Link>
                             </div>
                         </motion.div>

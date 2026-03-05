@@ -35,7 +35,7 @@ const QualityPolicy = () => {
                         >
                             <span className="section-tag">Clinical Integrity</span>
                             <h1 className="hero-title">
-                                Quality <span className="text-gradient-blue">Protocols.</span>
+                                Quality <span className="text-gradient-green">Protocols.</span>
                             </h1>
                             <p className="hero-desc">
                                 RRVHC operates with a zero-tolerance policy towards chemical non-compliance.

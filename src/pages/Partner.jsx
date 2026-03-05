@@ -23,7 +23,7 @@ const Partner = () => {
                         >
                             <span className="section-tag">Strategic Alliance</span>
                             <h1 className="hero-title">
-                                Partner with <span className="text-gradient-blue">us.</span>
+                                Partner with <span className="text-gradient-green">us.</span>
                             </h1>
                             <p className="hero-desc">
                                 Expand your reach through RRVHC's established global distribution network and

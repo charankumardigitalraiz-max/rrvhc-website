@@ -36,7 +36,7 @@ const AboutCompany = () => {
                         >
                             <span className="section-tag">Corporate Profile // Est. 1994</span>
                             <h1 className="hero-title">
-                                The Benchmark in <span className="text-gradient-blue">Veterinary Excellence.</span>
+                                The Benchmark in <span className="text-gradient-green">Veterinary Excellence.</span>
                             </h1>
                             <p className="hero-desc">
                                 RR Veterinary Health Care Private Limited delivers world-class clinical
@@ -59,7 +59,7 @@ const AboutCompany = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                         >
-                            <h2 className="section-title">Industrial <span className="text-gradient-blue">Evolution.</span></h2>
+                            <h2 className="section-title">Industrial <span className="text-gradient-green">Evolution.</span></h2>
                             <p>
                                 Headquartered in the high-tech industrial corridor of Hyderabad, India,
                                 **RR Veterinary Health Care Private Limited** stands as a premier

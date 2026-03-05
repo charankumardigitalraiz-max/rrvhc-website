@@ -23,7 +23,7 @@ const ResumeUpload = () => {
                         >
                             <span className="section-tag">Talent Acquisition</span>
                             <h1 className="hero-title">
-                                Join the <span className="text-gradient-blue">Future.</span>
+                                Join the <span className="text-gradient-green">Future.</span>
                             </h1>
                             <p className="hero-desc">
                                 Submit your technical profile to our global recruitment database.

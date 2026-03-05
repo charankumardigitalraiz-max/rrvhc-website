@@ -22,7 +22,7 @@ const VisionMission = () => {
                     >
                         <span className="section-tag">Strategic Roadmap</span>
                         <h1 className="hero-title">
-                            Our Vision & <span className="text-gradient-blue">Mission.</span>
+                            Our Vision & <span className="text-gradient-green">Mission.</span>
                         </h1>
                         <p className="hero-desc" style={{ maxWidth: '600px', marginInline: 'auto' }}>
                             Engineered to drive global clinical leadership through metabolic

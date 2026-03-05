@@ -31,7 +31,7 @@ const Gallery = () => {
                     >
                         <span className="section-tag">Visual Repository</span>
                         <h1 className="hero-title">
-                            Enterprise <span className="text-gradient-blue">Gallery.</span>
+                            Enterprise <span className="text-gradient-green">Gallery.</span>
                         </h1>
                         <p className="hero-desc">
                             Exploring three decades of clinical excellence, industrial milestones,
